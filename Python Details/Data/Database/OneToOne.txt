@@ -1,0 +1,27 @@
+CREATE TABLE Person1
+(
+Pk_Person_Id integer(10) primary key,
+Name VARCHAR(20),
+EmailId VARCHAR(20)
+);
+
+CREATE TABLE PassportDetails
+(
+Pk_Passport_Id integer(15) primary key,
+Fk_Person_Id integer(10),
+Passport_Number VARCHAR(25),
+foreign key(Pk_Passport_Id) references person1(Pk_Person_Id)
+);
+
+INSERT INTO Person1 VALUES (1,'Niraj','v.a@emails.com');
+INSERT INTO Person1 VALUES (2,'Vishwanath','v.v@emails.com');
+INSERT INTO Person1 VALUES (3,'Chetan','c.v@emails.com');
+GO
+
+INSERT INTO PassportDetails VALUES (101, 1, 'C3031R33');
+INSERT INTO PassportDetails VALUES (102, 'VRDK5695', 2);
+INSERT INTO dbo.PassportDetails VALUES (103, 'A4DEK33D', 3);
+GO
+
+SELECT * FROM Person
+SELECT * FROM PassportDetails;

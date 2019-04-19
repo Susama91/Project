@@ -1,0 +1,79 @@
+Create table:
+
+mysql> CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
+       species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+
+To verify that your table was created the way you expected, use a DESCRIBE statement:
+
+mysql> DESCRIBE pet;
+
+mysql>INSERT INTO pet
+       VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+
+mysql> SELECT * FROM pet;
++----------+--------+---------+------+------------+------------+
+| name     | owner  | species | sex  | birth      | death      |
++----------+--------+---------+------+------------+------------+
+| Fluffy   | Harold | cat     | f    | 1993-02-04 | NULL       |
+| Claws    | Gwen   | cat     | m    | 1994-03-17 | NULL       |
+| Buffy    | Harold | dog     | f    | 1989-05-13 | NULL       |
+| Fang     | Benny  | dog     | m    | 1990-08-27 | NULL       |
+| Bowser   | Diane  | dog     | m    | 1979-08-31 | 1995-07-29 |
+| Chirpy   | Gwen   | bird    | f    | 1998-09-11 | NULL       |
+| Whistler | Gwen   | bird    | NULL | 1997-12-09 | NULL       |
+| Slim     | Benny  | snake   | m    | 1996-04-29 | NULL       |
+| Puffball | Diane  | hamster | f    | 1999-03-30 | NULL       |
++----------+--------+---------+------+------------+------------+
+
+
+mysql> UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';
+
+mysql> SELECT * FROM pet WHERE name = 'Bowser';
+
+mysql> SELECT * FROM pet WHERE birth >= '1998-1-1';
+
+mysql> SELECT * FROM pet WHERE species = 'dog' AND sex = 'f';
+
+mysql> SELECT * FROM pet WHERE species = 'snake' OR species = 'bird';
+
+mysql> SELECT * FROM pet WHERE (species = 'cat' AND sex = 'm')
+       OR (species = 'dog' AND sex = 'f');
+
+mysql> SELECT name, birth FROM pet;
+
+mysql> SELECT owner FROM pet;
+
+mysql> SELECT DISTINCT owner FROM pet;
+
+Note:Notice that the query simply retrieves the owner column from each record,
+and some of them appear more than once. To minimize the output, retrieve each
+unique output record just once by adding the keyword DISTINCT:
+
+mysql> SELECT name, species, birth FROM pet
+       WHERE species = 'dog' OR species = 'cat';
+
+mysql> SELECT name, birth FROM pet ORDER BY birth;
+
+mysql> SELECT name, birth FROM pet ORDER BY birth DESC;
+
+mysql> SELECT name, species, birth FROM pet
+       ORDER BY species, birth DESC;
+
+mysql> SELECT name, birth, CURDATE(),
+       TIMESTAMPDIFF(YEAR,birth,CURDATE()) AS age
+       FROM pet;
+
+mysql> SELECT name, birth, death,
+       TIMESTAMPDIFF(YEAR,birth,death) AS age
+       FROM pet WHERE death IS NOT NULL ORDER BY age;
+
+mysql> SELECT name, birth, MONTH(birth) FROM pet;
+
+mysql> SELECT name, birth FROM pet WHERE MONTH(birth) = 5;
+
+mysql> SELECT name, birth FROM pet
+       WHERE MONTH(birth) = MONTH(DATE_ADD(CURDATE(),INTERVAL 1 MONTH));
+
+mysql> SELECT name, birth FROM pet
+       WHERE MONTH(birth) = MOD(MONTH(CURDATE()), 12) + 1;
+

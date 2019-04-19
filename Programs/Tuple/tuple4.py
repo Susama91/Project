@@ -1,0 +1,6 @@
+x=(10,20,30,40,50,10,20,30)
+print(x)
+print(x.count(210))
+print(x.count(40))
+print(x.index(50))
+print(x.index(20,3))

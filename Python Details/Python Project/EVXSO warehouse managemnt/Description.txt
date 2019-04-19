@@ -1,0 +1,12 @@
+Project Description:
+
+For maintaining the inventory in large warehouses, developed a web app for 
+Creating the new sale orders, purchase orders  and new inventory etc. Also 
+developed  the IPod and iPad apps for managing the inventory, sales and 
+purchase orders. Using python REST API to retrieve the data from the client 
+ERP DB and stored in eveXso db.
+
+Team size:
+after working individual how combining the code in a project?-------
+how to connect to DB?
+

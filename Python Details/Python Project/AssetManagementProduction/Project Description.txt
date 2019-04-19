@@ -1,0 +1,9 @@
+Project Description:
+Asset Management system is a system used for the tracking of assets assigned to the employees.
+The main aim of the project is to provide a single application where new employees can be added 
+and their assets viewed by both employees as well as the administrator.The application was designed
+with security kept in mind. The project contains two login formats, one for the administrator and 
+one for the employee.The two login systems were designed to provide the flexibility of giving administrative 
+rights to dedicated employees and tracking rights to everyone.This project provides a very good user interface 
+such that anyone can easily understand and can access the information with least effort.
+

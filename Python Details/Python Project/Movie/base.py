@@ -1,0 +1,10 @@
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+# engine = create_engine('oracle+cx_oracle://system:oracle@localhost:1521/orcl')
+engine = create_engine('mysql+mysqldb://susama:susama@123@localhost:3306/my_db')
+Session = sessionmaker(bind=engine)
+
+Base = declarative_base()
+

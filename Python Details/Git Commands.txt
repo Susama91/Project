@@ -1,0 +1,14 @@
+git commands:
+
+git clone <repo URL>  --> To clone a git repository
+
+Susama@Susama-PC MINGW64 ~/Desktop/Resume (master)  --> This master represents that we are on master branch
+$ pwd
+/c/Users/Susama/Desktop/Resume
+
+git status --> to check the repository status
+git add -a --> to add a file to the repo
+git commit -m "some_message" --> to commit the change
+git pull --> to update the current repository
+git push --> to publish changes to the remote repository
+

@@ -1,0 +1,9 @@
+python anywhere
+user-susama
+password-micky@05
+email-msusama05@gmail.com
+mysql password-mahi@123
+
+Database host address:susama.mysql.pythonanywhere-services.com
+Username:susama
+Start a console on:susama$default
